@@ -1,0 +1,6 @@
+Host codex-docker-sandbox
+    HostName 127.0.0.1
+    Port 2222
+    User root
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null

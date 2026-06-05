@@ -1,0 +1,20 @@
+services:
+  codex-agent:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: codex-sandbox-ssh
+    container_name: my-codex-agent
+    ports:
+      - "2222:22"
+      - "8079:80"
+    environment:
+      - CODEX_HOME=/root/.codex
+    volumes:
+      - ./data:/app/data
+      - codex-home:/root/.codex
+      - ../:/root/workspaces/codex-in-docker
+      - ~/.ssh/id_rsa.pub:/root/.ssh/authorized_keys:ro
+    restart: unless-stopped
+volumes:
+  codex-home:
