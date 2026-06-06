@@ -12,8 +12,6 @@ echo "Starting SSH daemon..."
 # (Omitting the -D flag allows it to detach, or we can use & to background it)
 /usr/sbin/sshd
 
-env
-
 echo "Starting Node.js server..."
 # Use 'exec' to hand over PID 1 to the Node.js process.
 # This ensures your Node app receives shutdown signals (SIGTERM/SIGINT) properly.
